@@ -1,0 +1,98 @@
+<div class="panel panel-default">
+<style type="text/css">
+	a {
+    color: inherit !important;
+    background-color: inherit;
+}
+
+a:hover {
+    color: inherit;
+    background-color: inherit;
+}
+
+
+.bigzone {
+    text-align: center !important;
+    background-color: #E14E47 !important;
+    float: none !important;
+    margin: 5px auto !important;
+    height: 100px !important;
+}
+
+
+.bigzone a {
+    font-size: 1.5em !important;
+    line-height: 100px !important;
+}
+</style>
+	<div class="panel-heading">Zone Administrateur</div>
+	<div class="panel-body">
+		<% flash.each do |key, value| %>
+		<div class="alert alert-info">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+			<%= value %>
+		</div>
+		<% end %>
+
+
+		<% if session[:user_status] == "2" %>
+
+		<div class="col-sm-6">
+			<div class="bigzone col-sm-9">
+				<a href="<%= registeradmin_path %>">Ajouter des admin</a>
+			</div>
+		</div>
+
+
+
+		<div class="col-sm-6">
+			<div class="bigzone col-sm-9">
+				<a href="/instances">Les instances</a>
+			</div>
+		</div>
+
+
+
+		<div class="col-sm-6">
+			<div class="bigzone col-sm-9">
+				<a href="/buisinesses">Les entreprises</a>
+			</div>
+		</div>
+
+
+
+		<div class="col-sm-6">
+			<div class="bigzone col-sm-9">
+				<a href="/surveys">Les Questionnaires</a>
+			</div>
+		</div>
+
+		<% elsif session[:user_status] == "1" %>
+
+		<div class="col-sm-6">
+			<div class="bigzone col-sm-9">
+				<a href="<%= surveycandidat_path %>">Votre questionnaire</a>
+			</div>
+		</div>
+
+		<% else %>
+
+
+		<div class="col-sm-6">
+			<div class="bigzone col-sm-9">
+				<a href="/home">Candidat</a>
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="bigzone col-sm-9">
+				<a href="/login">Admin</a>
+			</div>
+		</div>
+
+		<% end %>
+
+
+
+	</div>
+</div>

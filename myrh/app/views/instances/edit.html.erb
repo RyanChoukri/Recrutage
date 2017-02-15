@@ -1,0 +1,66 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Edition de l' Instance</div>
+	<div class="panel-body">
+
+		<div class="col-lg-push-3 col-lg-6">
+			<div class="well bs-component">
+				<form class="form-horizontal" action="/instances/<%= @instance.id %>" accept-charset="UTF-8" method="post">
+					<input name="utf8" value="✓" type="hidden">
+					<input name="_method" value="patch" type="hidden">
+
+
+
+					<div class="form-group">
+						<label class="col-lg-2 control-label" for="instance_year">Year</label>
+						<div class="col-lg-10">
+							<input class="form-control" value="<%= @instance.year %>" name="instance[year]" id="instance_year" type="number">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-2 control-label" for="instance_month">Month</label>
+						<div class="col-lg-10">
+							<input class="form-control" value="<%= @instance.month %>" name="instance[month]" id="instance_month" type="number">
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label class="col-lg-2 control-label">Entreprise</label>
+						<div class="col-lg-10">
+							<select class="form-control" name="instance[id_instance]">
+								<% @buisinesses.each do |buisiness| %>
+								<option value="<%= buisiness.id %>"><%= buisiness.name %>-<%= buisiness.city %></option>
+								<% end %>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-2 control-label">Questionaire</label>
+						<div class="col-lg-10">
+							<select class="form-control" name="instance[id_survey]">
+								<% @surveys.each do |survey| %>
+								<option value="<%= survey.id %>"><%= survey.name %></option>
+								<% end %>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-10">
+							<input class="btn btn-block btn-success" name="commit" value="Update Instance" data-disable-with="Update Instance" type="submit">
+						</div>
+					</div>
+
+					<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+				</form>
+
+
+
+				<%= link_to 'Show', @instance %> |
+				<%= link_to 'Back', instances_path %>
+
+			</div>
+		</div>

@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Candidat</div>
+  <div class="panel-body">
+
+    <% flash.each do |key, value| %>
+    <div class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+      <%= value %>
+    </div>
+    <% end %>
+
+    <p>Inscrivez-vous à une instance</p>
+    <% @instances.each do |instance| %>
+
+      <% @buisinesses.each do |buisiness | %>
+
+
+        <% if buisiness.id == instance.id_instance %>
+          <a href="register/candidat/<%= instance.id %>" class="btn btn-success btn-block">
+            <%= instance.year %>-<%= instance.month %> / <%= buisiness.city %> / <%= buisiness.name %>
+          </a>
+         <% end %>
+
+        <% end %>
+
+    <% end %>
+  </div>
+</div>

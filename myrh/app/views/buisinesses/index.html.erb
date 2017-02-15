@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Les Entreprises</div>
+  <div class="panel-body">
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buisinesses.each do |buisiness| %>
+      <tr>
+        <td><%= buisiness.name %></td>
+        <td><%= buisiness.city %></td>
+        <td><%= link_to 'Show', buisiness %></td>
+        <td><%= link_to 'Edit', edit_buisiness_path(buisiness) %></td>
+        <td><%= link_to 'Destroy', buisiness, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Buisiness', new_buisiness_path %>
+
+</div>
+</div>

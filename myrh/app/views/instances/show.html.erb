@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id instance:</strong>
+  <%= @instance.id_instance %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @instance.year %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @instance.month %>
+</p>
+
+<%= link_to 'Edit', edit_instance_path(@instance) %> |
+<%= link_to 'Back', instances_path %>

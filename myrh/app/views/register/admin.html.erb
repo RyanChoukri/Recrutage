@@ -1,0 +1,66 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Administateur</div>
+  <div class="panel-body">
+
+
+
+
+
+    <div class="col-lg-push-3 col-lg-6">
+      <div class="well bs-component">
+        <form class="form-horizontal" method="POST" action="/users/admin">
+          <fieldset>
+            <% flash.each do |key, value| %>
+            <div class="alert alert-danger">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+              <%= value %>
+            </div>
+            <% end %>
+
+            
+            <p>Ajouté un administrateur</p>
+            <div class="form-group">
+              <label for="inputLogin" class="col-lg-2 control-label">Son Login</label>
+              <div class="col-lg-10">
+                <input class="form-control" id="inputLogin" name="login" placeholder="Son Login" type="text">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputLastname" class="col-lg-2 control-label">Son Prénom</label>
+              <div class="col-lg-10">
+                <input class="form-control" id="inputLastname" name="name" placeholder="Son Prénom" type="text">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputName" class="col-lg-2 control-label">Son Nom</label>
+              <div class="col-lg-10">
+                <input class="form-control" id="inputName" name="lastname" placeholder="Son Nom" type="text">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 control-label">Son Email</label>
+              <div class="col-lg-10">
+                <input class="form-control" id="inputEmail" name="email" placeholder="Son Email" type="email">
+              </div>
+            </div>
+
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+
+            <div class="form-group">
+              <div class="col-lg-10">
+                <button type="submit" class="btn btn-block btn-success">Inscription</button>
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+      </div>
+
+
+
+    </div>
+  </div>

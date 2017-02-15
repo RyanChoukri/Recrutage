@@ -1,0 +1,40 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Les Instances</div>
+  <div class="panel-body">
+    <p id="notice"><%= notice %></p>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>L'entreprise</th>
+          <th>Year</th>
+          <th>Month</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @instances.each do |instance| %>
+        <tr>
+          <td>
+            <% @buisinesses.each do |buisiness| %>
+              <% if buisiness.id == instance.id_instance %>
+                 <%= buisiness.name %> <%= buisiness.city %></td>
+                <% end %>
+            <% end %>
+          <td><%= instance.year %></td>
+          <td><%= instance.month %></td>
+          <td><%= link_to 'Show', instance %></td>
+          <td><%= link_to 'Edit', edit_instance_path(instance) %></td>
+          <td><%= link_to 'Destroy', instance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Instance', new_instance_path %>
+
+  </div>
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_instance: 1
+  year: 1
+  month: 1
+
+two:
+  id_instance: 1
+  year: 1
+  month: 1

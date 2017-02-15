@@ -1,0 +1,152 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Candidat</div>
+  <div class="panel-body">
+
+
+
+
+
+    <div class="col-lg-6">
+      <div class="well bs-component">
+        <form class="form-horizontal" method="POST" action="/users">
+          <fieldset>
+          <% @buisinesses.each do |buisiness| %>
+              <% if buisiness.id == @instances.id_instance %>
+                  <p>Inscription en tant que candidat à <%= buisiness.city %> le <%= @instances.year %>-<%= @instances.month %> pour <%= buisiness.name %></p>
+                <% end %>
+            <% end %>
+
+
+           
+            <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 control-label">Votre Nom</label>
+              <div class="col-lg-10">
+                <input class="form-control" id="inputEmail" name="lastname" placeholder="Votre Nom" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 control-label">Votre Prenom</label>
+              <div class="col-lg-10">
+                <input class="form-control" id="inputEmail" name="name" placeholder="Votre Prenom" type="text">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 control-label">Votre Date de Naissance</label>
+              <div class="col-lg-10">
+                <input class="form-control" id="inputEmail" name="date" placeholder="1990-05-17" type="date">
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 control-label">Votre Email</label>
+              <div class="col-lg-10">
+                <input class="form-control" id="inputEmail" name="email" placeholder="Votre Email" type="email">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputPassword" class="col-lg-2 control-label">Votre Mot de Passe</label>
+              <div class="col-lg-10">
+                <input class="form-control" id="inputPassword" name="password" placeholder="Votre Mot de Passe" type="password">
+              </div>
+            </div>
+
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+            <input value="<%= @instances.id %>" name="instance" type="hidden">
+
+
+            <div class="form-group">
+              <div class="col-lg-10">
+                        <% @buisinesses.each do |buisiness| %>
+              <% if buisiness.id == @instances.id_instance %>
+                 <button type="submit" class="btn btn-block btn-success">Inscription a la session | <%= buisiness.name %></button>
+                <% end %>
+            <% end %>
+
+
+                
+              </div>
+            </div>
+<!--              <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Votre Mot de passe</label>
+                <div class="col-lg-10">
+                  <input class="form-control" id="inputPassword" placeholder="Votre Mot de passe" type="password">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Checkbox
+                    </label>
+                  </div>
+                </div>
+              </div>-->
+
+
+
+            <!--<div class="form-group">
+              <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+              <div class="col-lg-10">
+                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Radios</label>
+              <div class="col-lg-10">
+                <div class="radio">
+                  <label>
+                    <input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">
+                    Option one is this
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+                    Option two can be something else
+                  </label>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="select" class="col-lg-2 control-label">Selects</label>
+              <div class="col-lg-10">
+                <select class="form-control" id="select">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                <br>
+                <select multiple="" class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>-->
+
+
+          </fieldset>
+        </form>
+    </div>
+
+
+
+  </div>
+</div>

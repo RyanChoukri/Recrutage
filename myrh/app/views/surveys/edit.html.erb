@@ -1,0 +1,72 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Edition du Questionaire</div>
+	<div class="panel-body">
+
+<p>Edition Questionaire</p>
+<%= javascript_include_tag 'survey.js' %>
+
+
+<div class="form-group">
+	<label class="col-sm-2 control-label" for="instance_month">Type de question</label>
+	<div class="col-sm-4">
+
+		<select name="choice" id="choice" class="form-control">
+			<option value="1" >input</option>
+			<option value="2" >textarea</option>
+			<option value="3" >checkbox</option>
+			<option value="4" >radio</option>
+			<option value="5" >select</option>
+		</select>
+	</div>
+
+	<div class="col-sm-4">
+
+		<button id="addquestion" class="btn btn-success">Ajouté une question</button>
+
+
+	</div>
+
+	
+</div>
+
+<br><br>
+<div id="question">
+</div>
+
+
+<form class="form-horizontal" action="/surveys/<%= @survey.id %>" accept-charset="UTF-8" method="post">
+	<input name="utf8" value="✓" type="hidden">
+	<input name="_method" value="patch" type="hidden">
+
+			<div class="form-group">
+			<div class="col-lg-10">
+				<label class="control-label" for="survey_name">Html</label>
+				<input class="form-control" type="text" name="survey[html]" id="survey_html" value="<%= @survey.html %>">
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<div class="col-lg-10">
+				<label class="control-label" for="survey_name">Name</label>
+				<input class="form-control" value="<%= @survey.name %>" name="survey[name]" id="survey_name" type="text">
+			</div>
+		</div>
+
+
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+	<div class="form-group">
+		<div class="col-lg-10">
+			<input class="btn btn-block btn-success" name="commit" value="Update Instance" data-disable-with="Update Instance" type="submit">
+		</div>
+	</div>
+
+
+</form>
+
+<%= link_to 'Show', @survey %> |
+<%= link_to 'Back', surveys_path %>
+
+</div>
+</div>
